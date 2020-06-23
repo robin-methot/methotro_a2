@@ -53,7 +53,15 @@ when the user clicks on one of the nine cells of the board
 function cellClicked(cell) {
   //TODO: 1-5 should occur only when the selected cell is empty and the game is
   // still in progress!
-
+    
+  if ((board[cell].innerHTML == 0) && (!gameOver)){
+    // TODO: decrease # of empty cells by 1
+    empty -= 1;
+    board[cell].innerHTML = player;
+    checkWin();
+    player = (player === "X") ? "O" : "X";
+    document.getElementById("player").innerHTML = player;
+    }
   }
 
 /* Function checkWin() is called to check all winning combinations and display results
