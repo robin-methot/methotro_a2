@@ -90,6 +90,14 @@ function checkWin() {
 
 // TODO: if there are no empty cells left and game is not yet over,
 // it means that there is no winner for this game
+  if (!empty) {
+    // - set gameOver variable: game is now over
+    gameOver = true;
+    // - display "No one wins! :(" in the winner H3
+    document.getElementById("winner").innerHTML = "No one wins! :(";
+    // - call displayWin(true) function
+    displayWin(true);
+    }
 }
 
 /* Enhancements you can try:
